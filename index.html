@@ -1,0 +1,23 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+title: '首页'
+layout: default
+---
+<ul class="cont-list">
+    {% for post in site.posts  %}
+        <li>
+            <h5>{{post.title}}</h5>
+            <div class="list-cont margin-bottom-45">
+                {{ post.excerpt }}
+            </div>
+            <div class="clearfix bot-info">
+                <p class="time fl margin-right-20"><i class="iconfont icon-time"></i>{{ post.date | date: "%Y-%m-%d"}}</p>
+                <p class="name fl margin-right-20"><i class="iconfont icon-user"></i>{{ site.name }}</p>
+                <p class="looked fl"><i class="iconfont icon-eye_open"></i>{{post.excerpt | size}}</p>
+                <p class="comment fr"><i class="iconfont icon-comment"></i>{{post.excerpt | size}}</p>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
